@@ -40,7 +40,6 @@ int main()
             // quit system
             case 0:
                 std::cout << "Welcome to use next time!" << std::endl;
-                system("pause");
                 return 0;
             default:
                 break;

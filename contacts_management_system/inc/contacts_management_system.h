@@ -7,8 +7,8 @@
 
 #define MAX 1000
 
-#ifndef LEARNINGC_CONTACTS_MANAGEMENT_SYSTEM_H
-#define LEARNINGC_CONTACTS_MANAGEMENT_SYSTEM_H
+#ifndef CONTACTS_MANAGEMENT_SYSTEM_H
+#define CONTACTS_MANAGEMENT_SYSTEM_H
 
 // declare person info struct
 struct Person
@@ -34,4 +34,4 @@ struct ContactsBook
 void ShowMenu();
 
 
-#endif //LEARNINGC_CONTACTS_MANAGEMENT_SYSTEM_H
+#endif //CONTACTS_MANAGEMENT_SYSTEM_H
