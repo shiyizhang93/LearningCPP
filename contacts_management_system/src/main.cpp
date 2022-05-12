@@ -9,6 +9,10 @@ int main()
 {
     // init user input variable
     int user_input = 0;
+    // define contacts book struct
+    ContactsBook contacts_book;
+    // init contacts size
+    contacts_book.size = 0;
 
     while(1)
     {
@@ -21,6 +25,7 @@ int main()
         {
             // add contact
             case 1:
+                AddPerson(&contacts_book);
                 break;
             // show contacts
             case 2:
