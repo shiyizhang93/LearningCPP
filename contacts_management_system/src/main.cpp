@@ -25,7 +25,7 @@ int main()
         {
             // add contact
             case 1:
-                AddPerson(&contacts_book);
+                AddContact(&contacts_book);
                 break;
             // show contacts
             case 2:
@@ -45,6 +45,9 @@ int main()
             // quit system
             case 0:
                 std::cout << "Welcome to use next time!" << std::endl;
+                std::cout << "Press any number or letter key to continue ..." << std::endl;
+                char flag;
+                std::cin >> flag;
                 return 0;
             default:
                 break;

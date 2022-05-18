@@ -20,9 +20,8 @@ struct Person
     std::string addr;
 };
 
-// declare contacts-book info struct
-// member variables are contacts array and
-// the current number of contacts
+// declare contacts-book info struct member variables
+// are contacts array and the current number of contacts
 struct ContactsBook
 {
     struct Person contacts_array[MAX];
@@ -39,6 +38,9 @@ void ShowMenu();
  * Passes "contacts_book" pointer in to modify contacts
  * info.
  */
-void AddPerson(ContactsBook* contacts_book);
+void AddContact(ContactsBook* contacts_book);
 
+/*
+ *
+ */
 #endif //CONTACTS_MANAGEMENT_SYSTEM_H

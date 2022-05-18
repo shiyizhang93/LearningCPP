@@ -22,7 +22,7 @@ void ShowMenu()
 }
 
 
-void AddPerson(ContactsBook* contacts_book)
+void AddContact(ContactsBook* contacts_book)
 {
     if (contacts_book->size == MAX)
     {
@@ -76,8 +76,11 @@ void AddPerson(ContactsBook* contacts_book)
 
         // finish notice
         std::cout << "Add successfully!" << std::endl;
-        std::cout << "Press any key to continue" << std::endl;
-        int flag = std::cin.get();
-        std::system("clear");
+        // use cin to pause console
+        std::cout << "Press any number or letter key to continue ..." << std::endl;
+        char flag;
+        std::cin >> flag;
+        // use ANSI escape codes to clear console
+        std::cout << "\x1B[2J\x1B[H";
     }
 }
