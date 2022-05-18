@@ -29,6 +29,7 @@ int main()
                 break;
             // show contacts
             case 2:
+                ShowContacts(&contacts_book);
                 break;
             // delete contact
             case 3:
@@ -46,7 +47,7 @@ int main()
             case 0:
                 std::cout << "Welcome to use next time!" << std::endl;
                 std::cout << "Press any number or letter key to continue ..." << std::endl;
-                char flag;
+                int flag;
                 std::cin >> flag;
                 return 0;
             default:

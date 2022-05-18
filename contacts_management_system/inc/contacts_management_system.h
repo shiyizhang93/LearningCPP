@@ -34,13 +34,15 @@ struct ContactsBook
 void ShowMenu();
 
 /*
- * Achieves adding person info to contacts books struct.
- * Passes "contacts_book" pointer in to modify contacts
- * info.
+ * Achieves adding contact info to contacts books struct.
+ * Passes "contacts_book" pointer in to modify contacts info.
  */
 void AddContact(ContactsBook* contacts_book);
 
 /*
- *
+ * Achieves showing contacts info in contacts books struct.
+ * Passes "contacts_book" pointer in to check contacts info.
  */
+void ShowContacts(ContactsBook* contacts_book);
+
 #endif //CONTACTS_MANAGEMENT_SYSTEM_H

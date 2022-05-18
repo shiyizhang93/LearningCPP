@@ -78,9 +78,37 @@ void AddContact(ContactsBook* contacts_book)
         std::cout << "Add successfully!" << std::endl;
         // use cin to pause console
         std::cout << "Press any number or letter key to continue ..." << std::endl;
-        char flag;
+        int flag;
         std::cin >> flag;
         // use ANSI escape codes to clear console
         std::cout << "\x1B[2J\x1B[H";
     }
+}
+
+
+void ShowContacts(ContactsBook* contacts_book)
+{
+    if (contacts_book->size == 0)
+    {
+        std::cout << "The contacts book is empty, please "
+                     "add contacts before show contacts." << std::endl;
+        return;
+    }
+    else
+    {
+        for (int i = 0; i < contacts_book->size; i++)
+        {
+            std::cout << "Name: " << contacts_book->contacts_array[i].name << "\t";
+            std::cout << "Gender: " << (contacts_book->contacts_array[i].gender == 1 ? "Male" : "Female") << "\t";
+            std::cout << "Age: " << contacts_book->contacts_array[i].age << "\t";
+            std::cout << "Phone Number: " << contacts_book->contacts_array[i].phone_num << "\t";
+            std::cout << "Home Address: " << contacts_book->contacts_array[i].addr << std::endl;
+        }
+    }
+    // use cin to pause console
+    std::cout << "Press any number or letter key to continue ..." << std::endl;
+    int flag;
+    std::cin >> flag;
+    // use ANSI escape codes to clear console
+    std::cout << "\x1B[2J\x1B[H";
 }
