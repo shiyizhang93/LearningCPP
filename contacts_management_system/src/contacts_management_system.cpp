@@ -34,12 +34,14 @@ void AddContact(ContactsBook* contacts_book)
     {
         std::string name;
         int gender = 0;
-        int age = 0;
+        std::string age;
         std::string phone_num;
         std::string addr;
+
         // get name
         std::cout << "Please enter the name: " << std::endl;
-        std::cin >> name;
+        std::cin.ignore();
+        getline(std::cin,name);
         contacts_book->contacts_array[contacts_book->size].name = name;
         // get gender
         std::cout << "Please enter the gender: " << std::endl;
@@ -64,12 +66,13 @@ void AddContact(ContactsBook* contacts_book)
         contacts_book->contacts_array[contacts_book->size].age = age;
         // get phone number
         std::cout << "Please enter the phone number: " << std::endl;
-        std::cin >> phone_num;
+        std::cin.ignore();
+        getline(std::cin, phone_num);
         contacts_book->contacts_array[contacts_book->size].phone_num = phone_num;
         // get address
         std::cout << "Please enter the home address: " << std::endl;
-        std::cin >> addr;
-        contacts_book->contacts_array[contacts_book->size].phone_num = addr;
+        getline(std::cin, addr);
+        contacts_book->contacts_array[contacts_book->size].addr = addr;
 
         // update contacts book size
         contacts_book->size++;
@@ -100,13 +103,13 @@ void ShowContacts(ContactsBook* contacts_book)
         {
             std::cout << "Name: " << contacts_book->contacts_array[i].name << "\t";
             std::cout << "Gender: " << (contacts_book->contacts_array[i].gender == 1 ? "Male" : "Female") << "\t";
-            std::cout << "Age: " << contacts_book->contacts_array[i].age << "\t";
+            std::cout << "Age: " << contacts_book->contacts_array[i].age << "\t\t";
             std::cout << "Phone Number: " << contacts_book->contacts_array[i].phone_num << "\t";
             std::cout << "Home Address: " << contacts_book->contacts_array[i].addr << std::endl;
         }
     }
     // use cin to pause console
-    std::cout << "Press any number or letter key to continue ..." << std::endl;
+    std::cout << "Press any num or letter key to continue ..." << std::endl;
     int flag;
     std::cin >> flag;
     // use ANSI escape codes to clear console

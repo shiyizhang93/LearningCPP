@@ -15,7 +15,7 @@ struct Person
 {
     std::string name;
     int gender;
-    int age;
+    std::string age;
     std::string phone_num;
     std::string addr;
 };

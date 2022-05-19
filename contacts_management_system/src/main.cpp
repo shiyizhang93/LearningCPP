@@ -46,7 +46,7 @@ int main()
             // quit system
             case 0:
                 std::cout << "Welcome to use next time!" << std::endl;
-                std::cout << "Press any number or letter key to continue ..." << std::endl;
+                std::cout << "Press any num or letter key to continue ..." << std::endl;
                 int flag;
                 std::cin >> flag;
                 return 0;
