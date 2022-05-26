@@ -115,3 +115,22 @@ void ShowContacts(ContactsBook* contacts_book)
     // use ANSI escape codes to clear console
     std::cout << "\x1B[2J\x1B[H";
 }
+
+
+int IsExist(ContactsBook* contacts_book, const std::string& name)
+{
+    for (int i = 0; i < contacts_book->size; i++)
+    {
+        if (contacts_book->contacts_array[i].name == name)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+void DeleteContact(ContactsBook* contacts_book)
+{
+
+}

@@ -4,14 +4,16 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <cstdio>
 
 #define MAX 1000
 
 #ifndef CONTACTS_MANAGEMENT_SYSTEM_H
 #define CONTACTS_MANAGEMENT_SYSTEM_H
 
-// declare person info struct
-struct Person
+// Declare person info struct
+struct Contact
 {
     std::string name;
     int gender;
@@ -20,11 +22,11 @@ struct Person
     std::string addr;
 };
 
-// declare contacts-book info struct member variables
+// Declare contacts-book info struct member variables
 // are contacts array and the current number of contacts
 struct ContactsBook
 {
-    struct Person contacts_array[MAX];
+    struct Contact contacts_array[MAX];
     int size;
 };
 
@@ -44,5 +46,19 @@ void AddContact(ContactsBook* contacts_book);
  * Passes "contacts_book" pointer in to check contacts info.
  */
 void ShowContacts(ContactsBook* contacts_book);
+
+/*
+ * Checks the contact if exists in contacts book.
+ * Passes "name" in to find the same member "name" of
+ * "Contacts" listed in "contacts_book" recursively.
+ * Returns the index in case of finding match.
+ * Returns -1 if no one matches.
+ */
+int IsExist(ContactsBook* contacts_book, const std::string& name);
+
+/*
+ *
+ */
+void DeleteContact(ContactsBook* contacts_book);
 
 #endif //CONTACTS_MANAGEMENT_SYSTEM_H
