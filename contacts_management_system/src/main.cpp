@@ -37,6 +37,7 @@ int main()
                 break;
             // search contact
             case 4:
+                SearchContact(&contacts_book);
                 break;
             // modify contact
             case 5:

@@ -62,4 +62,10 @@ int IsExist(ContactsBook* contacts_book, const std::string& name);
  */
 void DeleteContact(ContactsBook* contacts_book);
 
+/*
+ * Searches the specific contact by name from the contacts book.
+ * Passes "contacts_book" pointer in to show the searched contact info.
+ */
+void SearchContact(ContactsBook* contacts_book);
+
 #endif //CONTACTS_MANAGEMENT_SYSTEM_H

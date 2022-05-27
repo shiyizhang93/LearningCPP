@@ -172,3 +172,34 @@ void DeleteContact(ContactsBook* contacts_book)
     // use ANSI escape codes to clear console
     std::cout << "\x1B[2J\x1B[H";
 }
+
+
+void SearchContact(ContactsBook* contacts_book)
+{
+    std::string name;
+    int ret;
+
+    std::cout << "Please enter the name of contact you want to search: " << std::endl;
+    std::cin.ignore();
+    getline(std::cin,name);
+    ret = IsExist(contacts_book, name);
+    if (ret != -1)
+    {
+        std::cout << "Name: " << contacts_book->contacts_array[ret].name << "\t";
+        std::cout << "Gender: " << (contacts_book->contacts_array[ret].gender == 1 ? "Male" : "Female") << "\t";
+        std::cout << "Age: " << contacts_book->contacts_array[ret].age << "\t\t";
+        std::cout << "Phone Number: " << contacts_book->contacts_array[ret].phone_num << "\t";
+        std::cout << "Home Address: " << contacts_book->contacts_array[ret].addr << std::endl;
+    }
+    else
+    {
+        std::cout << "No contact matches!" << std::endl;
+    }
+
+    // use cin to pause console
+    std::cout << "Press any num or letter key to continue ..." << std::endl;
+    int flag;
+    std::cin >> flag;
+    // use ANSI escape codes to clear console
+    std::cout << "\x1B[2J\x1B[H";
+}
