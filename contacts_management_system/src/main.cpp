@@ -41,9 +41,10 @@ int main()
                 break;
             // modify contact
             case 5:
+                ModifyContact(&contacts_book);
                 break;
             // empty contacts
-            case 6:
+            case 6:EmptyContacts(&contacts_book);
                 break;
             // quit system
             case 0:

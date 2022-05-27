@@ -37,7 +37,7 @@ void ShowMenu();
 
 /*
  * Achieves adding contact info to contacts books struct.
- * Passes "contacts_book" pointer in to modify contacts info.
+ * Passes "contacts_book" pointer in to add contacts info.
  */
 void AddContact(ContactsBook* contacts_book);
 
@@ -67,5 +67,18 @@ void DeleteContact(ContactsBook* contacts_book);
  * Passes "contacts_book" pointer in to show the searched contact info.
  */
 void SearchContact(ContactsBook* contacts_book);
+
+/*
+ * Modifies the info of the specific contact searched by name
+ * from the contacts book. Passes "contacts_book" pointer in to modify
+ * contacts info.
+ */
+void ModifyContact(ContactsBook* contacts_book);
+
+/*
+ * Empties the contacts book. Passes "contacts_book" pointer in to make
+ * effect on the original struct.
+ */
+void EmptyContacts(ContactsBook* contacts_book);
 
 #endif //CONTACTS_MANAGEMENT_SYSTEM_H

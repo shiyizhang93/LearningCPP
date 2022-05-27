@@ -203,3 +203,77 @@ void SearchContact(ContactsBook* contacts_book)
     // use ANSI escape codes to clear console
     std::cout << "\x1B[2J\x1B[H";
 }
+
+
+void ModifyContact(ContactsBook* contacts_book)
+{
+    std::string name;
+    int ret;
+
+    std::cout << "Please enter the name of contact you want to modify: " << std::endl;
+    std::cin.ignore();
+    getline(std::cin,name);
+    ret = IsExist(contacts_book, name);
+    if (ret != -1)
+    {
+        int gender = 0;
+        // get name
+        std::cout << "Please enter the name: " << std::endl;
+        getline(std::cin,contacts_book->contacts_array[ret].name);
+        // get gender
+        std::cout << "Please enter the gender: " << std::endl;
+        std::cout << "1 -- Male" << std::endl;
+        std::cout << "2 -- Female" << std::endl;
+        while (true)
+        {
+            std::cin >> gender;
+            if (gender == 1 || gender == 2)
+            {
+                contacts_book->contacts_array[ret].gender = gender;
+                break;
+            }
+            else
+            {
+                std::cout << "Please enter the correct gender indicator!" << std::endl;
+            }
+        }
+        // get age
+        std::cout << "Please enter the age: " << std::endl;
+        std::cin >> contacts_book->contacts_array[ret].age;
+        // get phone number
+        std::cout << "Please enter the phone number: " << std::endl;
+        std::cin.ignore();
+        getline(std::cin, contacts_book->contacts_array[ret].phone_num);
+        // get address
+        std::cout << "Please enter the home address: " << std::endl;
+        getline(std::cin, contacts_book->contacts_array[ret].addr);
+    }
+    else
+    {
+        std::cout << "No contact matches!" << std::endl;
+    }
+
+    // finish notice
+    std::cout << "Modify successfully!" << std::endl;
+    // use cin to pause console
+    std::cout << "Press any number or letter key to continue ..." << std::endl;
+    int flag;
+    std::cin >> flag;
+    // use ANSI escape codes to clear console
+    std::cout << "\x1B[2J\x1B[H";
+}
+
+
+void EmptyContacts(ContactsBook* contacts_book)
+{
+    contacts_book->size = 0;
+
+    // finish notice
+    std::cout << "Empty successfully!" << std::endl;
+    // use cin to pause console
+    std::cout << "Press any number or letter key to continue ..." << std::endl;
+    int flag;
+    std::cin >> flag;
+    // use ANSI escape codes to clear console
+    std::cout << "\x1B[2J\x1B[H";
+}
