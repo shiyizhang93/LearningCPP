@@ -28,6 +28,12 @@ void AddContact(ContactsBook* contacts_book)
     {
         std::cout << "The contacts book is full, please "
                      "delete before add new contacts." << std::endl;
+        // use cin to pause console
+        std::cout << "Press any number or letter key to continue ..." << std::endl;
+        int flag;
+        std::cin >> flag;
+        // use ANSI escape codes to clear console
+        std::cout << "\x1B[2J\x1B[H";
         return;
     }
     else
@@ -95,6 +101,12 @@ void ShowContacts(ContactsBook* contacts_book)
     {
         std::cout << "The contacts book is empty, please "
                      "add contacts before show contacts." << std::endl;
+        // use cin to pause console
+        std::cout << "Press any num or letter key to continue ..." << std::endl;
+        int flag;
+        std::cin >> flag;
+        // use ANSI escape codes to clear console
+        std::cout << "\x1B[2J\x1B[H";
         return;
     }
     else
@@ -132,5 +144,31 @@ int IsExist(ContactsBook* contacts_book, const std::string& name)
 
 void DeleteContact(ContactsBook* contacts_book)
 {
+    std::string name;
+    int ret;
 
+    std::cout << "Please enter the name of contact you want to delete: " << std::endl;
+    std::cin.ignore();
+    getline(std::cin,name);
+    ret = IsExist(contacts_book, name);
+    if (ret != -1)
+    {
+        for (int i = ret; i < contacts_book->size - 1; i++)
+        {
+            contacts_book->contacts_array[i] = contacts_book->contacts_array[i+1];
+        }
+        contacts_book->size--;
+        std::cout << "The contact has been deleted." << std::endl;
+    }
+    else
+    {
+        std::cout << "No contact matches!" << std::endl;
+    }
+
+    // use cin to pause console
+    std::cout << "Press any num or letter key to continue ..." << std::endl;
+    int flag;
+    std::cin >> flag;
+    // use ANSI escape codes to clear console
+    std::cout << "\x1B[2J\x1B[H";
 }

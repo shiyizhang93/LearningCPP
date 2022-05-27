@@ -33,6 +33,7 @@ int main()
                 break;
             // delete contact
             case 3:
+                DeleteContact(&contacts_book);
                 break;
             // search contact
             case 4:
